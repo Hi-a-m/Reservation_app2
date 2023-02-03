@@ -1,0 +1,277 @@
+/*// Place all the styles related to the homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+
+/*@media screen and (max-width: 1280px)
+.FirstView {
+      height: 850px;
+      padding-top: 117px;
+}*/
+
+
+
+.FirstView {
+    background-image: image-url('cover-lg.png');
+    background-size: cover;
+    background-position: 50%;
+    height: 750px;
+    /*上記消す？*/
+    margin-bottom: 180px;
+    padding-top: 80px;
+    width: 100%;
+}
+
+.FirstView__title {
+  color: #fff;
+  font-family: Lato,sans-serif;
+  font-size: 84px;
+  font-weight: 400;
+  line-height: 101px;
+  margin-bottom: 48px;
+  text-align: center;
+  word-break: keep-all;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 32px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*　体験したことのない旅をしよう */
+
+.FirstView__title {
+  color: #fff;
+  font-family: Lato,sans-serif;
+  font-size: 84px;
+  font-weight: 400;
+  line-height: 101px;
+  margin-bottom: 48px;
+  text-align: center;
+  word-break: keep-all;
+}
+
+
+
+h2 {
+  display: block;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+
+/*　検索サーチ */
+
+.FirstViewSearch {
+  background: hsla(0,0%,100%,.4);
+  margin: auto;
+  padding: 32px;
+  width: 704px;
+}
+
+.Search__Field{
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+
+div {
+  display: block;
+}
+
+form {
+  display: block;
+  margin-top: 0em;
+}
+
+.FirstViewSearch__input {
+  height: 58px;
+  margin-bottom: 16px;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+input {
+  margin: 0;
+  font-family: inherit;
+}
+
+input {
+  writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  text-align: start;
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+}
+
+/*　検索ボタン */
+
+.FirstViewSearch__button {
+  align-items: center;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  height: 58px;
+  font-size: 18px;
+  color: #fff;
+  width: 100%;
+}
+
+.btn {
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+/*　おすすめエリア */
+
+.RecommendAreaSection {
+  margin-bottom: 260px;
+}
+
+.RecommendAreaSection__title {
+  border-bottom: 3px solid #ff7757;
+  font-size: 44px;
+  line-height: 66px;
+  margin-bottom: 140px;
+  padding-bottom: 15px;
+}
+
+h2, h3 {
+  font-weight: 500;
+  margin-top: 0;
+}
+
+
+.RecommendAreas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    grid-gap: 32px;
+    gap: 32px;
+}
+
+.RecommendArea {
+  background-size: cover;
+  background-position: 50%;
+  border-radius: 26px;
+  display: flex;
+  flex-direction: column;
+  height: 455px;
+  justify-content: flex-end;
+  padding: 40px 24px;
+  width: calc(25% - 24px);
+}
+
+/*　@media screen and (min-width: 960px) and (max-width: 1280px)
+.RecommendArea {
+    width: calc(33.33333% - 21.33333px);
+}*/
+
+a {
+  text-decoration: none;
+}
+
+a:-webkit-any-link {
+  cursor: pointer;
+}
+
+.RecommendArea__name--ja {
+  font-size: 28px;
+  line-height: 42px;
+}
+
+.RecommendArea__name {
+  color: #fff;
+}
+
+.RecommendArea__name--en {
+  font-family: Lato,sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29px;
+}
+
+.RecommendArea__name--en>svg {
+  height: 20px;
+  margin-top: -4px;
+  margin-right: 5px;
+  width: 20px;
+}
+
+svg {
+  vertical-align: middle;
+}
+
+svg:not(:root) {
+  overflow-clip-margin: content-box;
+  overflow: hidden;
+}
+
+:not(svg) {
+  transform-origin: 0px 0px;
+}
+
+
+/*　各都市画像 */
+
+
+.RecommendArea--tokyo {
+  background-image: image-url('tokyo.png');
+}
+
+.RecommendArea--osaka {
+  background-image: image-url('osaka.png');
+}
+
+.RecommendArea--kyoto {
+  background-image: image-url('kyoto.png');
+}
+
+.RecommendArea--sapporo {
+  background-image: image-url('sapporo.png');
+}
+
+
+/*　検索画面 */
+
+
+
+

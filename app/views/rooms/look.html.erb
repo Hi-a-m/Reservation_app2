@@ -1,0 +1,30 @@
+<%= form_with(url: look_rooms_path, local: true, method: :get) do |form| %>
+  <%= form.text_field :keyword, placeholder: "投稿を検索する" %>
+  <%= form.submit "検索", class: "search-btn" %>
+<% end %>
+  
+
+<h3>検索結果: <%= @rooms.count(:id) %>件</h3>
+<table>
+  <thead>
+    <tr>
+      <th>ルームネーム</th>
+      <th>住所</th>
+      <th>ルーム紹介</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rooms.each do |r| %>
+        <td>
+          <%= r.room_name %>
+        </td>
+        <td>
+          <%= r.address %>
+        </td>
+        <td>
+          <%= r.introduction %>
+        </td>
+    <% end %>
+  </tbody>
+</table>

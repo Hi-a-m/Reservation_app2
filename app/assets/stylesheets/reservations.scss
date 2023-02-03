@@ -1,0 +1,41 @@
+// Place all the styles related to the reservations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.ReservationsContainer {
+    margin-top: 40px;
+    margin-bottom: 260px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.container, .container-fluid {
+    max-width: 1440px;
+    padding: 0 32px;
+}
+
+thead {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    display: table-header-group;
+}
+
+.ReservationsTable th {
+    font-size: 14px;
+    line-height: 18px;
+}
+
+
+.text-nowrap {
+    white-space: nowrap!important;
+}
+
+
+.ReservationsTable td {
+    padding: 16px 0.5rem!important;
+    font-size: 14px;
+    line-height: 18px;
+}
+

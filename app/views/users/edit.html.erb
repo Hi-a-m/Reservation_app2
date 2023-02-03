@@ -1,0 +1,83 @@
+<%= flash[:notice] %>
+<%= flash[:alert] %>
+
+<section class="container UserSection">
+  <h2>設定</h2>
+
+    <div class="UserContainer">
+    <ul class="SideNavigation">
+        <li class="SideNavigation__item active">
+          <%= link_to "アカウント", users_account_path(current_user) %><br>
+        </li>
+
+        <li class="SideNavigation__item ">
+          <%= link_to "プロフィール", user_path(current_user) %>
+        </li>
+    </ul>
+
+
+    <div class="AccountInformation">
+    <ul class="TabNavigation">
+        <li class="TabNavigation__item active">
+          <a href="/users/account">アカウント</a>
+        </li>
+
+        <li class="TabNavigation__item ">
+          <a href="/users/profile">プロフィール</a>
+        </li>
+    </ul>
+
+
+    <div class="AccountInformation__header">
+      <h3>プロフィール</h3>
+    </div>
+
+
+     <%= form_with model: @user do |form| %>
+      <form enctype="multipart/form-data" action="/users/profile" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="1En48RdwYYhahBIkT9dSTX1ye7L6LMO/hWWbor5KRRnQb66kWeUHglsB+v36QBaA5UUcSSV2GfXiT6Jn0kDYYw==">
+        <div class="FileUploadArea AccountInformation__input-group">
+          <label class="AccountInformation__label" for="user_image">アイコン画像</label>
+          
+
+          <p class="FileUploadArea__input-group">
+            <img class="FileUploadArea__image">
+              <% if @user.icon? %>
+                <%= image_tag @user.icon.url, :size => '70x70' %>
+              <% else %>
+                <%= image_tag "https://rails-02-sample.herokuapp.com/assets/common/default-avatar-7a6cbfd7993e89f24bfc888f4a035a83c6f1428b8bdc47eed9095f2799a40153.png", :size => '70x70' %>
+              <% end %>
+          
+
+            <label class="FileUploadArea__label" for="user_image">
+              <%= form.label :icon,"アイコン画像" %>
+              <%= form.file_field :icon %>
+            </label>
+          </p>
+        </div>
+
+        <div class="AccountInformation__input-group">
+          <label class="AccountInformation__label" for="user_name">名前</label>
+
+          <div class="AccountInformation__input-wrapper">
+            <input class="AccountInformation__input" placeholder="名前を入力して下さい。" type="text" value="" name="user[name]" id="user_name">
+          </div>
+        </div>
+
+        <div class="AccountInformation__input-group">
+          <label class="AccountInformation__label" for="user_introduction">自己紹介</label>
+
+            <div class="AccountInformation__input-wrapper">
+              <%= form.text_field :profile, placeholder:"自己紹介を入力して下さい。", class:"AccountInformation__input" %>
+            </div>
+        </div>
+
+        <div class="AccountInformation__buttons">
+          <a class="btn AccountInformation__button AccountInformation__button--secondary" href="http://127.0.0.1:3000">キャンセル</a>
+            <input type="submit" name="commit" value="保存" class="btn AccountInformation__button AccountInformation__button--primary" data-disable-with="保存">
+ 
+
+      </form>
+    <% end %>
+</div>
+</div>
+</section>

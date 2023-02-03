@@ -1,0 +1,38 @@
+<div class="ReservationsContainer">
+  <h2>予約済みルーム一覧</h2>
+
+  <div class="table-responsive">
+    <table class= "table align-middle ReservationsTable">
+      <thead>
+        <th>ルーム画像</th>
+        <th>ルーム名</th>
+        <th>ルーム紹介</th>
+        <th class="text-nowrap">合計料金</th>
+        <th class="text-nowrap">開始日</th>
+        <th class="text-nowrap">終了日</th>
+        <th class="text-nowrap">予約確定日時</th>
+        <th></th>
+      </thead>
+
+    <tbody>
+      <% @reservations.each do |reservation| %>
+
+      <tr>
+        <td><%= image_tag reservation.room.image.url,size: "200x150" %></td>
+        <td><%= link_to reservation.room do %>
+            <%= reservation.room.room_name %>
+            <% end %></td>
+        <td><%= reservation.room.introduction %></td>
+        <td class="text-nowrap">¥<%= reservation.total_price %></td>
+        <td class="text-nowrap"><%= reservation&.start_date&.strftime("%Y/%m/%d") %></td>
+        <td class="text-nowrap"><%= reservation&.end_date&.strftime("%Y/%m/%d") %></td>
+        <td class="text-nowrap"><%= reservation&.updated_at&.strftime("%Y/%m/%d %H:%M") %></td>
+
+        <td><%= link_to "削除" , reservation, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+    </table>
+
+  </div>
+</div>

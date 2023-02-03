@@ -1,0 +1,105 @@
+<section class="container UserSection">
+  <h2>設定</h2>
+
+    <div class="UserContainer">
+    <ul class="SideNavigation">
+  <li class="SideNavigation__item active">
+    <%= link_to "アカウント", users_account_path(current_user) %><br>
+  </li>
+
+  <li class="SideNavigation__item ">
+    <%= link_to "プロフィール", user_path(current_user) %>
+  </li>
+</ul>
+
+
+    <div class="AccountInformation">
+      <ul class="TabNavigation">
+  <li class="TabNavigation__item active">
+    <a href="/users/account">アカウント</a>
+  </li>
+
+  <li class="TabNavigation__item ">
+    <a href="/users/profile">プロフィール</a>
+  </li>
+</ul>
+
+
+      <div class="AccountInformation__header">
+        <h3>アカウント</h3>
+      </div>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+
+
+      <form action="/users" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="K9vhA0u1aUPID7KeGDjKluwhmYvVtbpUQykAg8qv4IUv/bdWBSAPScmKWketr45bdBb+cArvYB4kAzlGpqV9/w==">
+        
+        <div class="mb-4 AccountInformation__input-group">
+          <label class="AccountInformation__label" for="user_email">メールアドレス</label>
+          
+          <div class="AccountInformation__input-wrapper">
+          <input autocomplete="email" class="AccountInformation__input" placeholder="メールアドレスを入力してください" type="email" value="" name="user[email]" id="user_email">
+          </div>
+        </div>
+
+
+
+
+
+        <div class="mb-4 AccountInformation__input-group">
+          <label class="AccountInformation__label" for="user_password">
+            <span>変更後パスワード</span><br>
+            <span class="AccountInformation__label--caption">※変更する場合のみ</span>
+          </label>
+
+          <div class="AccountInformation__input-wrapper">
+         <input class="AccountInformation__input" placeholder="変更後パスワードを入力" type="password" name="user[password]" id="user_password">
+          </div> 
+        </div> 
+
+
+
+
+
+
+
+
+
+
+
+        <div class="mb-4 AccountInformation__input-group">
+          <label class="AccountInformation__label" for="user_password_confirmation">
+            <span>確認用パスワード</span><br>
+            <span class="AccountInformation__label--caption">※変更する場合のみ</span>
+          </label>
+
+          <div class="AccountInformation__input-wrapper">
+            <input class="AccountInformation__input" placeholder="変更後パスワードを入力" type="password" name="user[password_confirmation]" id="user_password_confirmation">
+            
+          </div>
+        </div>
+
+
+
+
+<div class="mb-4 AccountInformation__input-group">
+          <label class="AccountInformation__label" for="user_current_password">現在のパスワード</label>
+
+          <div class="AccountInformation__input-wrapper">
+            <input class="AccountInformation__input" placeholder="現在のパスワードを入力" type="password" name="user[current_password]" id="user_current_password">
+            
+          </div>
+        </div>
+
+
+
+<div class="AccountInformation__buttons">
+          <a class="btn AccountInformation__button AccountInformation__button--secondary" href="/users/account">キャンセル</a>
+          <input type="submit" name="commit" value="保存" class="btn AccountInformation__button AccountInformation__button--primary" data-disable-with="保存">
+        </div>
+
+<% end %>
+</div>
+</section>
