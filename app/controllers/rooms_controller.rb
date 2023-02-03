@@ -70,7 +70,7 @@ class RoomsController < ApplicationController
 
   def look
     @user = current_user
-    @rooms = Room.search(params[:keyword])
+    @results = @q.result
   end
 
   private
