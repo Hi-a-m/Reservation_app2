@@ -24,22 +24,19 @@
     
 
 
+
+              <div class="navbar-dropdown">
               <div class="btn_03">
               <% if user_signed_in? %>
-              
               <%= current_user.name %>さん
-              </div>
-              <div class="btn_5">
               <% if current_user.icon? %>
-                <%= image_tag current_user.icon.url, size: "30x30" %>
+                <%= image_tag current_user.icon.url, size: "10x10" %>
               <% else %>
                 <%= image_tag ("https://rails-02-sample.herokuapp.com/assets/common/default-avatar-7a6cbfd7993e89f24bfc888f4a035a83c6f1428b8bdc47eed9095f2799a40153.png"), size: "30x30" %>
               <% end %>
               </div>
-
-
      
-            <div class="navbar-dropdown">
+         
               <%= link_to "施設登録",new_room_path,class: "btn_04" %>
               <%= link_to "予約済み一覧", reservations_path,class: "btn_04" %>
               <%= link_to "登録済み一覧", rooms_path,class: "btn_04" %>
