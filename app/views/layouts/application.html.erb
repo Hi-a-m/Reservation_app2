@@ -23,38 +23,38 @@
      <a href="/"><%= image_tag 'logo2.png', class: "Navbar__logo", size: "238x40" %></a>
     
 
-      <div class="d-flex align-items-center NavProfile" id="dropdown-button" data-bs-toggle="dropdown" aria-expanded="false">
-            
-        <nav class="navbar" role="navigation" aria-label="dropdown navigation">
-          <div class="navbar-item has-dropdown is-hoverable">
 
-
-            <span class="nav-item d-sm-inline-block d-none NavProfile__name">
+              <div class="btn_03">
               <% if user_signed_in? %>
+              
               <%= current_user.name %>さん
-            </span>
-
+              </div>
+              <div class="btn_5">
               <% if current_user.icon? %>
                 <%= image_tag current_user.icon.url, size: "30x30" %>
               <% else %>
                 <%= image_tag ("https://rails-02-sample.herokuapp.com/assets/common/default-avatar-7a6cbfd7993e89f24bfc888f4a035a83c6f1428b8bdc47eed9095f2799a40153.png"), size: "30x30" %>
               <% end %>
+              </div>
 
 
      
             <div class="navbar-dropdown">
-              <%= link_to "ルーム登録",new_room_path,class: "navbar-item" %>
-              <%= link_to "予約済みルーム一覧", reservations_path,class: "navbar-item" %>
-              <%= link_to "登録済みルーム一覧", rooms_path,class: "navbar-item" %>
-              <%= link_to "設定", users_account_path,class: "navbar-item" %>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "navbar-item" %>
+              <%= link_to "施設登録",new_room_path,class: "btn_04" %>
+              <%= link_to "予約済み一覧", reservations_path,class: "btn_04" %>
+              <%= link_to "登録済み一覧", rooms_path,class: "btn_04" %>
+              <%= link_to "設定", users_account_path,class: "btn_04" %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "btn_04" %>
             </div>
           </div>
 
               <% else %>
-              <%= link_to "ログイン", new_user_session_path,class:"button is-info" %>
-              <%= link_to "新規登録", new_user_registration_path,class:"button is-Light" %>
+              <%= link_to "ログイン", new_user_session_path,class:"btn_04" %>
+              <%= link_to "新規登録", new_user_registration_path,class:"btn_04" %>
               <% end %>
+
+            
+
         </nav>
       </div>
     </div>

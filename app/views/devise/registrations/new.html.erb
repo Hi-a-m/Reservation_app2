@@ -3,7 +3,7 @@
     <h2 class="AccountFormContainer__title">新規登録</h2>
 
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= form_with url: registration_path(resource_name) do |f| %>
   <%= render 'layouts/error_messages', model: f.object %>
 
     <form class="Form AccountForm" action="/users" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="gM+ikQUs8To7oVxHTnglKGj8t43T8qcWS9HpqsI8lsvusJw1vuRmJoGrTfN18jGdZ+K43abYsjit4RUwEU6DhQ==">

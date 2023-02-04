@@ -29,9 +29,8 @@
         <h3>アカウント</h3>
       </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<%= form_with url: registration_path(resource_name), method: :put do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-
 
 
       <form action="/users" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="K9vhA0u1aUPID7KeGDjKluwhmYvVtbpUQykAg8qv4IUv/bdWBSAPScmKWketr45bdBb+cArvYB4kAzlGpqV9/w==">

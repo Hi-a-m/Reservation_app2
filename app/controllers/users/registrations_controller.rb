@@ -4,6 +4,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
   
+  protect_from_forgery
+
+  
   def show
     @user = current_user
     @user = User.find(params[:id, :email])
