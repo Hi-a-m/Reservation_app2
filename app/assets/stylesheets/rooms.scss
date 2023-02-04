@@ -1,0 +1,486 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+/*登録済みルーム画像設定*/
+
+.image{
+    width:250px;
+    height: 500px;
+    object-fit: cover;
+    vertical-align: middle;
+   }
+
+   
+/*index*/
+
+.OwnRoomsContainer {
+    margin-top: 40px;
+}
+
+
+.container {
+    max-width: 1440px;
+    padding: 0 32px;
+}
+
+
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.align-middle {
+    vertical-align: middle!important;
+}
+
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-accent-bg: transparent;
+    --bs-table-striped-color: #212529;
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+    --bs-table-active-color: #212529;
+    --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+    --bs-table-hover-color: #212529;
+    --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    border-color: #dee2e6;
+    caption-side: bottom;
+    border-collapse: collapse;
+    display: table;
+    text-indent: initial;
+    border-spacing: 2px;
+}
+
+.table>thead {
+    vertical-align: bottom;
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    display: table-header-group;
+}
+
+tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    display: table-row;
+    vertical-align: inherit;
+}
+
+.table>:not(:last-child)>:last-child>* {
+    border-bottom-color: currentColor;
+}
+
+.OwnRoomsTable th:first-of-type {
+    padding-left: 0!important;
+}
+
+.OwnRoomsTable th {
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.table>:not(caption)>*>* {
+    padding: 0.5rem 0.5rem;
+    background-color: var(--bs-table-bg);
+    border-bottom-width: 1px;
+    box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+}
+
+th {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    text-align: -webkit-match-parent;
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+}
+
+.table>tbody {
+    vertical-align: inherit;
+}
+
+tbody {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    display: table-row-group;
+}
+
+.OwnRoomsTable td:first-of-type {
+    padding-left: 0!important;
+}
+
+.OwnRoomsTable td {
+    padding: 16px 0.5rem!important;
+}
+
+.OwnRoomsTable td {
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.table>:not(caption)>*>* {
+    background-color: var(--bs-table-bg);
+    border-bottom-width: 1px;
+    box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+}
+
+td {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+.OwnRoomsTable td .dropdown {
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.align-items-center {
+    align-items: center!important;
+}
+
+.justify-content-center {
+    justify-content: center!important;
+}
+
+.d-flex {
+    display: flex!important;
+}
+
+img {
+    vertical-align: middle;
+        overflow-clip-margin: content-box;
+        overflow: clip;
+    }
+
+
+/*room_edit*/
+
+.FormWrapper {
+    display: flex;
+    height: fit-content;
+    padding: 40px 0 180px;
+}
+
+.FormContainer {
+    background-color: #fff;
+    border-radius: 12px;
+    margin: auto;
+    width: 702px;
+}
+
+section {
+    display: block;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 39px;
+    margin-bottom: 24px;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+input {
+    height: 45px;
+}
+
+input {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0;
+    font-family: inherit;
+}
+
+input[type="hidden" i] {
+    appearance: none;
+    background-color: initial;
+    cursor: default;
+    display: none !important;
+    padding: initial;
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+}
+
+.RoomsForm__input-group {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.RoomsForm__label {
+    color: #333;
+    font-size: 16px;
+    line-height: 26px;
+    width: 33%;
+}
+
+.form-label {
+    margin-bottom: 0.5rem;
+}
+
+label {
+    display: inline-block;
+    cursor: default;
+    font-weight: 700;
+}
+
+.Form__label--required:after {
+    content: "*";
+    color: #ff4949;
+    font-size: 14px;
+    margin-left: 4px;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.RoomsForm__input {
+    width: 66%;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.RoomsForm__input {
+    width: 66%;
+}
+
+textarea.form-control {
+    min-height: calc(1.5em + (0.75rem + 2px));
+}
+
+textarea {
+    height: 124px;
+    padding: 12px!important;
+    resize: vertical;
+    margin: 0;
+    font-family: inherit;
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    column-count: initial !important;
+}
+
+
+
+.SearchRoomsFormContainer {
+    background-color: #dfe2e6;
+    height: 125px;
+}
+
+.SearchRoomsForm {
+    display: flex;
+    grid-gap: 16px;
+    gap: 16px;
+    margin-left: 500px;
+    margin-top: 40px;
+    margin-right: 10px;
+    width: 285px;
+    box-sizing: border-box;
+}
+
+
+.SearchRoom {
+    height: 45px;
+    width: 285px;
+}
+
+.Search {
+    height: 45px;
+    width: 285px;
+
+}
+
+.SearchRoomsForm__button {
+    font-size: 16px;
+    line-height: 24px;
+    height: 45px;
+    width: 100px;
+    margin-top: 40px;
+}
+
+
+.SearchRoomsForm__input-group {
+    height: 45px;
+    padding-left: 45px;
+    width: 100px;
+    margin-right: 10px;
+}
+
+
+/*新規登録*/
+
+
+.FormWrapper {
+    display: flex;
+    height: fit-content;
+    padding: 40px 0 180px;
+}
+
+.FormContainer {
+    background-color: #fff;
+    border-radius: 12px;
+    margin: auto;
+    width: 702px;
+}
+
+
+
+.update-content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    margin-left: 200px;
+}
+
+
+.row {
+    color: #333;
+    font-size: 16px;
+    line-height: 26px;
+    width: 33%;
+}
+
+.RoomsForm__input {
+    width: 60%;
+    font-size: 16px;
+}
+
+.update-content{
+width: 60%;
+font-size: 16px;
+}
+
+.RoomsForm__button--cancel {
+    border: 10px solid #e0e0e0;
+    color: #a70a0a;
+    line-height: 44px;
+    color: #333;
+}
+
+
+
+.RoomsForm__button--submit {
+    
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.RoomsForm__button {
+    align-items: center;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    height: 58px;
+    font-size: 18px;
+    font-size: 14px;
+    font-weight: 700;
+    height: 45px;
+    line-height: 21px;
+    width: 100%;
+}
+
+
+
+/*検索結果*/
+
+
+/*親要素*/
+.SearchRooms_FormContainer{
+    display: flex;
+    background-color: #dfe2e6;
+    height: 125px;
+}
+
+
+.search-form {
+    margin-top: 50px;
+    margin-left: 40px;
+}
+
+.search-inputt{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+form.search-form {
+    margin-top: 0px;
+    margin-left: 40px;
+}
+
+.RoomsContainer {
+    margin-bottom: 260px;
+    padding-top: 40px;
+}
+
+.container {
+    max-width: 1440px;
+    padding: 0 32px;
+}
+
+
+.RoomsContainer__result {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 24px;
+}
+
+.room_image {
+    width: 120px;
+    height: 70px;
+}

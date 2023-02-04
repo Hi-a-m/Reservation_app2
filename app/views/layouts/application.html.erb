@@ -1,16 +1,90 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ReservationApp4</title>
+    <title>PoteShare[kadai]</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
+
+
   <body>
+
+   
+  <header>
+    <header class ="navbar Navbar">
+    <div class="container-fluid">
+
+     <a href="/"><%= image_tag 'logo2.png', class: "Navbar__logo", size: "238x40" %></a>
+    
+
+
+
+              <div class="navbar-dropdown">
+              <div class="btn_03">
+              <% if user_signed_in? %>
+              <%= current_user.name %>さん
+              <% if current_user.icon? %>
+                <%= image_tag current_user.icon.url, size: "10x10" %>
+              <% else %>
+                <%= image_tag ("https://rails-02-sample.herokuapp.com/assets/common/default-avatar-7a6cbfd7993e89f24bfc888f4a035a83c6f1428b8bdc47eed9095f2799a40153.png"), size: "30x30" %>
+              <% end %>
+              </div>
+     
+         
+              <%= link_to "施設登録",new_room_path,class: "btn_04" %>
+              <%= link_to "予約済み一覧", reservations_path,class: "btn_04" %>
+              <%= link_to "登録済み一覧", rooms_path,class: "btn_04" %>
+              <%= link_to "設定", users_account_path,class: "btn_04" %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "btn_04" %>
+            </div>
+          </div>
+
+              <% else %>
+              <%= link_to "ログイン", new_user_session_path,class:"btn_04" %>
+              <%= link_to "新規登録", new_user_registration_path,class:"btn_04" %>
+              <% end %>
+
+            
+
+        </nav>
+      </div>
+    </div>
+   </header>
+  </header>
+
+  <% if flash[:notice] %>
+    <div class="notification is-info">
+      <p class="notice"><%= notice %></p>
+   </div>
+  <% end %>
+  <% if flash[:alert] %>
+    <div class="notification is-danger">
+      <p class="alert"><%= alert %></p>
+    </div>
+  <% end %>
+
+    <%# yieldの上が一般的。これはflashメッセージというもので、それぞれnotice,alertという変数に格納されています。
+     ログインした際やログアウトした際、フォームの送信エラーなど簡単な通知をしたい場合に使用します。%>
     <%= yield %>
+
+  <footer class="Footer">
+    <div class="container-fluid">
+    <div class="Footer__logo">
+      <a href="/"><%= image_tag 'logo2.png', class: "Navbar__logo", size: "238x40" %></a>
+
+      <p class="Footer__copyright">
+      Copyright © Potepan Share 2023 All rights reserved
+      </p>
+    </div>
+    </div>
+  </footer>
+
+
   </body>
 </html>

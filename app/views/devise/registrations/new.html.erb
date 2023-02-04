@@ -1,0 +1,51 @@
+<div class="AccountFormWrapper">
+  <section class="AccountFormContainer">
+    <h2 class="AccountFormContainer__title">新規登録</h2>
+
+
+  <%= form_with url: registration_path(resource_name) do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
+
+    <form class="Form AccountForm" action="/users" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="gM+ikQUs8To7oVxHTnglKGj8t43T8qcWS9HpqsI8lsvusJw1vuRmJoGrTfN18jGdZ+K43abYsjit4RUwEU6DhQ==">
+      
+      <div class="mb-3">
+        <label class="form-label Form__label--required"><%= f.label :"ユーザー名" %></label><br />
+        <input class="form-control" placeholder="ユーザー名を入力" autocomplete="name" type="text" name="user[name]" id="user_name">
+      </div>
+
+
+      <div class="mb-3">
+        <label class="form-label Form__label--required"><%= f.label :"メールアドレス" %></label><br />
+        <input class="form-control" placeholder="メールアドレスを入力" autocomplete="email" type="email" value="" name="user[email]" id="user_email">         
+      </div>
+
+
+
+      <div class="mb-3">
+        <label class="form-label Form__label--required" for="user_password"><%= f.label :"パスワード" %></label><br />
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> 文字以上)</em>
+        <% end %><br />
+        <input class="form-control" placeholder="パスワードを入力" type="password" name="user[password]" id="user_password">
+      </div>
+
+
+
+      <div class="mb-3">
+        <label class="form-label Form__label--required"><%= f.label :"確認用パスワード" %></label><br />
+        <input class="form-control" placeholder="確認用パスワードを入力" type="password" name="user[password_confirmation]" id="user_password_confirmation">
+      </div>
+
+      <div class="mb-3">
+       <%= f.submit "新規作成", class: "AccountForm__button" %>
+      </div>
+
+    </form>
+    <% end %>
+  </section>
+</div>
+
+
+
+
+

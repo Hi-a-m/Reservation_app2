@@ -1,0 +1,12 @@
+<h1>homesのindex</h1>
+<table>
+
+
+  <tbody>
+    <% @results.each do |room| %>
+      <tr>
+        <td><%= room.room_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

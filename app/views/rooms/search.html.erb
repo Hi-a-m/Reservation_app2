@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div class="SearchRooms_FormContainer">
+  <%= search_form_for @q, url: search_rooms_path do |form| %> <%# @qに検索の情報を入れて、コントローラーに渡します。　%>
+    
+      <%= form.search_field :address_cont, placeholder: "エリアを入力", class: "search-form" %>
+
+      <%= form.search_field :room_name_or_address_or_introduction_cont, placeholder: "キーワード検索" %>
+      <%= form.submit '検索', class: "search-inputt" %>
+   <% end %>
+</div>
+
+
+<div class="container RoomsContainer">
+
+  <p class="RoomsContainer__result">
+    <h2>検索結果: <%= @results.count(:id) %>件みつかりました。</h2>
+  </p>
+
+<div class="table-responsive">
+    <table class= "table align-middle ReservationsTable">
+      <thead>
+      <tr>
+        <th>ルーム画像</th>
+        <th>ルーム名</th>
+        <th>住所</th>
+        <th>詳細</th>
+        <th class="text-nowrap">ルーム詳細</th>
+        <th class="text-nowrap">料金</th>
+        <th>予約</th>
+        <th>削除</th>
+      </tr>
+      </thead>
+
+      <tbody>
+        <% @results.each do |r| %>
+        <tr>
+          <td>
+            <% if r.image? %>
+              <%= image_tag r.image.url, size: "120x70" %>
+            <% else %>
+              <image src="https://rails-02-sample.herokuapp.com/assets/room/default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png" class="room_image" alt="デフォルト"><!-- デフォルト画像表示用 -->
+            <% end %>
+          </td>
+          <td>
+            <%= r.room_name %>
+          </td>
+          <td>
+            <%= r.address %>
+          </td>
+          <td>
+            <%= r.introduction %>
+          </td>
+          <td>
+            <%= link_to "詳細はこちら" , room_path(r) %>
+          </td>
+          <td>
+            <%= r.price %>円/日
+          </td>
+          <td>
+            <%= link_to "予約する" , room_path(r) %>
+          </td>
+          <td>
+            <%= link_to "削除" , r, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+          </td>
+         </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<div class="AccountFormWrapper">
+  <section class="AccountFormContainer">
+    <h2 class="AccountFormContainer__title">ログイン</h2>
+
+    <form class="Form AccountForm" action="/users/sign_in" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="RqGjA4Hy3lc7/2f3o672tKLAL9wkV/6e0o7vKrn6RC0o3p2nOjpJS4H1dkOYJOIBrd4gjFF967A0vhOwaohRYw==">
+    <input type="hidden" name="authenticity_token" value="MsgLFXpkMTHZmDmwxmy4MSaHwRQL38+vbfQEILu2JIdctzWxwaymLWOSKAT95qyEKZnORH712oGLxPi6aMQxyQ==">  
+
+      <%= form_with url: session_path(resource_name) do |f| %>
+
+      <div class="mb-3">
+        <label class="form-label" for="user_email"><%= f.label :メールアドレス %></label><br>
+        <input class="form-control" placeholder="メールアドレスを入力" autocomplete="email" type="email" value="" name="user[email]" id="user_email">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="user_password"><%= f.label :パスワード %></label><br>
+        <input class="form-control" placeholder="パスワードを入力" type="password" name="user[password]" id="user_password">
+      </div>
+
+      <input type="submit" name="commit" value="ログイン" class="btn mb-3 AccountForm__button AccountForm__button--primary" data-disable-with="ログイン">
+
+      <div class="btn AccountForm__button AccountForm__button--secondary">
+        <%= link_to "新しいアカウントを作成", new_user_registration_path %>
+        <% end %>
+      </div>
+      
+    </form>
+  </section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+ 

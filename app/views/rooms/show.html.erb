@@ -1,0 +1,58 @@
+<h3>施設詳細&予約ページ</h3>
+
+<%= flash[:notice] %>
+<%= flash[:alert] %>
+
+
+<%= form_with model: @reservation, method: :get, url: new_reservation_path do |f| %><table>
+
+    <tr>
+      <td><% if @room.image? %>
+      <p>
+
+      <%= image_tag @room.image.url %><!-- userインスタンスの画像ファイルのURLを取得し表示 -->
+      </p>
+      <% end %>
+      </td>
+    </tr>
+
+    <tr>
+      <td>ルーム名：<%= @room.room_name %></td>
+    </td>
+ 
+    <tr>
+      <td>アドレス：<%= @room.address %></td>
+    </tr>
+
+    <tr>
+      <td>ルーム詳細：<%= @room.introduction %></td>
+    </tr>
+
+    <tr>
+      <td>一日当たりの金額：￥<%= @room.price %>〜</td>
+    </tr>
+
+</table>
+
+    <%= f.hidden_field :room_id, value:@room.id %>
+    <%= f.hidden_field :user_id, value:current_user.id %>
+    <%= f.hidden_field :total_price, value: @room.price %>
+    <%= f.hidden_field :room_name, value: @room.room_name %>
+    <%= f.hidden_field :image, value: @room.image%>
+    <%= f.hidden_field :introduction, value: @room.introduction %>
+
+    <label>開始日</label>
+        <%= f.text_field :start_date%>
+
+    <label>終了日</label>
+        <%= f.text_field :end_date%>
+
+    <label>人数</label>
+        <%= f.text_field :people%>
+
+    <%= f.submit "この日程で予約する"%>
+<% end %>
+
+    <%= link_to "戻る", :back %>
+    
+
